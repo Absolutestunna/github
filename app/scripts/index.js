@@ -11,6 +11,7 @@ var template = handlebars.compile(source);
 
 
 var url = "https://api.github.com/users/" + username;
+var url2 = "https://api.github.com/users/" + username + "/repos";
 if(typeof(githubtoken) !== "undefined"){
   $.ajaxSetup({
     headers: {
@@ -39,5 +40,14 @@ $.ajax(url).then(function(data){
       organizations: data.organizations,
     }
     $(".sidebar").append(template(context));
+
+});
+
+$.ajax(url2).then(function(data){
+  console.log(data)
+  var context = {
+
+    }
+    // $(".sidebar").append(template(context));
 
 });
