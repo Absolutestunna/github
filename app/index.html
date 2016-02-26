@@ -32,20 +32,22 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-3 sidebar"></div>
+        <div class="col-md-3 sidebar">
+        </div>
 
 
 
         <div class="col-md-9 main-body">
           <div class="row">
               <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="#">Home</a></li>
-                <li role="presentation"><a href="#">Messages</a></li>
-                <li class="presentation edit"><button class="btn btn-sm"><span class='glyphicon glyphicon-pencil'></span>Edit Profile</button></li>
+                <li role="presentation" class="contributions active"><a href="#">Contributions</a></li>
+                <li role="presentation" class="repositories"><a href="#">Repositories</a></li>
+                <li role="presentation" class="activity"><a href="#">Public Activity</a></li>
+                <li role="presentation" class="presentation edit"><button class="btn btn-sm edit-button"><span class='glyphicon glyphicon-pencil'></span>Edit Profile</button></li>
              </ul>
 
           </div>
-          <div class="show"></div>
+          <div class="repo-space"></div>
         </div>
       </div>
 
@@ -70,7 +72,7 @@
 
         <div class="website"><span class="glyphicon glyphicon-link"></span><a href="https://www.linkedin.com/in/joshua-abu-b8738358?trk=hp-identity-name">{{blog}}</a></div>
 
-        <div class="time"><span class="glyphicon glyphicon-time"></span>Joined at: {{date}}</div>
+        <div class="time"><span class="glyphicon glyphicon-time"></span>Joined on {{date}}</div>
 
 
           <div class="followers">
@@ -83,9 +85,26 @@
             <span><a href={{following}}>Following</a></span>
           </div>
 
-          <div class="organizations"><a href="{{organizations}}">JS Link</a></div>
+          <!-- <div>Organizations</div> -->
+          <div class="orgImgs"></div>
+          <!-- <div class="organizations"><a href="{{organizations}}">JS Link</a></div> -->
+    </script>
 
+    <script id="body-info" type="text/x-handlebars-template">
+      <div class="repoWrapper">
+        <div class="left">
+          <h3 class="repName">{{name}}</h3>
+          <h6 class="repTime">{{updated_at}}</h6>
+        </div>
+        <div class="right">
+          <h6 class="language">{{language}}</h6>
+          <span class="glyphicon glyphicon-star"></span>
+          <h6 class="repStars">{{stargazers_count}}</h6>
+          <span><img class="git-img"src="../dist/images/branch.png" alt=""></span>
+          <h6 class="forkCount">{{forks_count}}</h6>
 
+        </div>
+      </div>
     </script>
     <script src="js/bundle.js"></script>
   </body>
