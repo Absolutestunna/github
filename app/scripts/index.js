@@ -38,6 +38,6 @@ $.ajax(url).then(function(data){
       date: data.created_at,
       organizations: data.organizations,
     }
-    $(".sidebar").append(template(context))
+    $(".sidebar").append(template(context));
 
 });

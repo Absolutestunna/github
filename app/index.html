@@ -17,7 +17,7 @@
       </div>
       <div class="nav2">
         <span class="glyphicon glyphicon-bell notification"></span>
-        <a href="#"  class="createNew">
+        <a href="#" class="createNew">
           <span class="glyphicon glyphicon-plus"></span>
           <span class="glyphicon glyphicon-triangle-bottom"></span>
         </a>
@@ -32,12 +32,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-3 sidebar">
-
-        </div>
-
-
-
+        <div class="col-md-3 sidebar"></div>
 
 
 
@@ -59,47 +54,37 @@
 
 
     <script id="sidebar_info" type="text/x-handlebars-template">
-        <div class="row profile_pic">
-          <div class="col-md-12"><img src="{{avatar_url}}" alt=""></div>
+        <div class="row">
+          <div class="col-md-12 profile_pic">
+            <img src="{{avatar_url}}" alt="profile-pic">
+          </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <h1>{{name}}</h1>
-            <h2>{{login}}</h2>
-          </div>
+        <div class="name">
+          <h1>{{name}}</h1>
+          <h2>{{login}}</h2>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-              <div class="location">{{location}}</div>
-              <div class="email">{{email}}</div>
-              <div>
-                <span>link symbol</span>
-                <span><a href="">{{blog}}</a></span>
-              </div>
-              <div>
-                <span>time symbol<span>Joined at: {{date}}</span></span>
-              </div>
-          </div>
-        </div>
-        <div class="row">
+
+        <div class="location"><span class="glyphicon glyphicon-map-marker map"></span>{{location}}</div>
+        <div class="email"><span class="glyphicon glyphicon-envelope envelope"></span>{{email}}</div>
+
+        <span class="glyphicon glyphicon-link website"><a href="https://www.linkedin.com/in/joshua-abu-b8738358?trk=hp-identity-name">{{blog}}</a></span>
+
+        <span class="glyphicon glyphicon-time time"><span>Joined at: {{date}}</span></span>
+
+
           <div class="followers">
             <div class="followerNum">{{followersNum}}</div>
             <span><a href={{followers}}></a>Followers</span>
           </div>
-          <!-- <div class="starred">
-            <div class="starredNum">1</div>
-            <span><a href="{{starred}}"></a>Starred</span>
-          </div> -->
+
           <div class="following">
             <div class="followingNum">{{followingNum}}</div>
             <span><a href={{following}}></a>following</span>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-12 organizations"><a href="{{organizations}}">JS Link</a></div>
-        </div>
+          <div class="organizations"><a href="{{organizations}}">JS Link</a></div>
+
 
     </script>
     <script src="js/bundle.js"></script>
