@@ -20,7 +20,8 @@ header {
   background-color: teal;
   padding-top: 8px;
   padding-bottom: 8px;
-  background-color:  #d9d9d9;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #eee;
   .nav1 {
     display: inline-block;
     margin-left: 153.5px;
@@ -41,6 +42,9 @@ header {
       margin-right: 15px;
       a {
         color: black;
+      }
+      a:hover {
+        color: #4078c0;
       }
     }
   }
@@ -64,18 +68,18 @@ header {
 ///////////////////////////////////////////////////////////////////////////
 //////////////////////////////CONTAINER////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-.container{
+
+.container {
   max-width: 973px;
   height: 800px;
-  border: 1px solid red;
   margin-top: 20px;
-
+  border-bottom: 1px solid #d5d5d5;
+  margin-bottom: 40px;
 }
 
-
 /////////////////////////////SIDEBAR///////////////////////////////////////
+
 .sidebar {
-  border: 1px solid green;
   height: 100%;
   padding: 0;
   margin-right: 19px;
@@ -89,10 +93,10 @@ header {
 .name {
   // padding: 0;
   h1 {
-    margin-top: 8px;
+    margin-top: 15px;
     font-size: 26px;
     font-weight: bold;
-    margin-bottom: 0;
+    margin-bottom: 1px;
 
   }
   h2 {
@@ -103,21 +107,21 @@ header {
     color: #666;
     margin-top: 0;
     padding-bottom: 15px;
-    border-bottom: 1px solid #d9d9d9;
+    border-bottom: 1px solid #eee;
   }
 }
 .location {
-  margin-top: 22px;
+  margin-top: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   vertical-align: top;
   font-size: 14px;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   .map {
     margin-right: 10px;
     margin-left: 5px;
-    color: #d9d9d9;
+    color: #999;
   }
 }
 .email {
@@ -126,15 +130,15 @@ header {
   white-space: nowrap;
   vertical-align: top;
   font-size: 14px;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   .envelope {
     margin-right: 10px;
     margin-left: 5px;
-    color: #d9d9d9;
+    color: #999;
   }
 }
 .website {
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   margin-left: 5px;
   display: inline-block;
   width: 100%;
@@ -145,7 +149,7 @@ header {
   span {
     margin-right: 10px;
     display: inline;
-    color: #d9d9d9;
+    color: #999;
 
   }
   a {
@@ -160,71 +164,154 @@ header {
   white-space: nowrap;
   vertical-align: top;
   font-size: 14px;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee;
+
   span {
     margin-right: 10px;
     margin-left: 5px;
-    color: #d9d9d9;
+    color: #999;
   }
 }
-.followers, .following {
-  display: inline-block;
-  margin-left: 30px;
-  a {
-    color: black;
+.foll-Star {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  color: #4078c0;
+
+
+  .followers, .following, .starred {
+    display: inline-block;
+    a {
+      color: black;
+      font-size: 11px;
+    }
+    div {
+      color: #4078c0;
+      font-weight: bolder;
+      font-size: 28px;
+      text-align: center;
+    }
   }
-  div {
-    color: blue;
-    text-align: center;
+  .followers, .starred {
+    margin-right: 39px;
   }
 }
 .organizations {
-  margin-top: 20px;
-  text-align: center;
-  .orgImgs {
-    width: 32px;
-    height: 32px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  font-weight: bolder;
+  font-size: 16px;
+}
+.orgImgs {
+  display: inline-block;
+  a > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10%;
+
   }
 }
+
 
 
 //////////////////////////////MAIN BODY////////////////////////////////////
+
+
+// Repo Section
 .main-body {
   width: 73%;
-  .edit {
-    float: right;
-  }
-  .edit-button {
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 20px;
-    color: #333;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    background-color: #eee;
-    background-image: -webkit-linear-gradient(#fcfcfc, #eee);
-    background-image: linear-gradient(#fcfcfc, #eee);
-    border: 1px solid #d5d5d5;
-    border-radius: 3px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-appearance: none;
-  }
+  padding: 0;
+  .repo-header {
+    padding-bottom: 15px;
+    img {
+      width: 15.7px;
+      height: 15.7px;
+      color: gray;
+    }
+    .edit {
+      float: right;
+    }
+    .edit-button {
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      background-image: -webkit-linear-gradient(#fcfcfc, #ddd);
+      background-image: linear-gradient(#fcfcfc, #ddd);
+      background-color: #ddd;
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
 
+    }
+    .edit-button:hover {
+      background-image: -webkit-linear-gradient(#fcfcfc, #ccc);
+      background-image: linear-gradient(#fcfcfc, #ccc);
+    }
+  }
 }
-repoWrapper {
-  height: 100px;
-  border-bottom: 1px solid gray;
-  // width: 100%;
+.rep-tab {
+  border-bottom: 1px solid #eee;
+  .repo-searchIB {
+    display: inline-block;
+    width: 48%;
+    #repo-search {
+      display: inline-block;
+      width: 75%;
+    }
+    .search-btn {
+      display: inline-block;
+    }
+  }
+  .repoFunctions {
+    display: inline-block;
+    padding: 0;
+    word-spacing: 6px;
+    li {
+      display: inline;
+    }
+  }
+  .new-btn {
+    display: inline-block;
+    float: right;
+    height: 35px;
+    color: #FFF;
+
+    // background-color: #79d858;
+    background-image: -webkit-linear-gradient(#79d858, #569e3d);
+    background-image: -o-linear-gradient(#79d858, #569e3d);
+    background-image: linear-gradient(#79d858, #569e3d);
+    font-size: 13px;
+    img {
+      margin-right: 2px;
+      width: 13px;
+      height: 16px;
+      color: #FFF;
+    }
+    span {
+      margin-left: 2.5px;
+    }
+  }
+  .new-btn:hover {
+    background-image: -webkit-linear-gradient(#79d858, #569e3d);
+    background-image: -o-linear-gradient(#79d858, #569e3d);
+    background-image: linear-gradient(#79d858, #569e3d);
+  }
 }
+
 .right {
   display: inline-block;
   float: right;
+  color: #888;
   span, h6 {
     display: inline-block;
+  }
+  h6 {
+    font-weight: 200;
+    font-size: 13px;
+
   }
   .git-img {
     width: 10px;
@@ -234,5 +321,66 @@ repoWrapper {
 }
 .left {
   display: inline-block;
+  h6 {
+    font-weight: 200;
+    font-size: 13px;
+  }
+}
+.repoWrapper {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  .repName {
+    color: #4078c0;
+  }
+  .repName:hover {
+    text-decoration: underline;
+  }
+  .repTime {
+    color: #888;
+  }
+}
 
+/////////////////////////////////////FOOTER/////////////////////////////////////
+.footer {
+  margin-bottom: 30px;
+}
+.footNav1, .footNav2, .footer-img {
+  display: inline-block;
+  font-size: 12px;
+}
+
+.footNav1 {
+  margin-left: 153.5px;
+  padding-left: 0;
+
+  li {
+    display: inline;
+    margin-right: 10px;
+  }
+  li:first-child {
+    color: #767676;
+
+  }
+}
+
+.footer-img {
+  position: absolute;
+  left: 50%;
+  img {
+  height: 24px;
+  width: 24px;
+  color: #ccc;
+
+  }
+}
+
+.footNav2 {
+  margin-right: 153.5px;
+  float: right;
+
+  li {
+    display: inline;
+    margin-right: 10px;
+
+  }
 }

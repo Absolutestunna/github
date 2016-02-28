@@ -7,105 +7,158 @@
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
-    <header>
-      <div class="nav1">
-        <img src="../dist/images/github.png" alt="git">
-        <input type="text" class="form-control input" placeholder="Search Github">
-        <span><a href="#">Pull Request</a></span>
-        <span><a href="#">Issues</a></span>
-        <span><a href="">Gist</a></span>
-      </div>
-      <div class="nav2">
-        <span class="glyphicon glyphicon-bell notification"></span>
-        <a href="#" class="createNew">
-          <span class="glyphicon glyphicon-plus"></span>
-          <span class="glyphicon glyphicon-triangle-bottom"></span>
-        </a>
-        <div class="smallPro">
-          <img src="#" alt="pic">
-          <span class="glyphicon glyphicon-triangle-bottom"></span>
-        </div>
+        <header>
+          <div class="nav1">
+            <img src="../dist/images/github.png" alt="git">
+            <input type="text" class="form-control input" placeholder="Search Github">
+            <span><a href="#">Pull Request</a></span>
+            <span><a href="#">Issues</a></span>
+            <span><a href="">Gist</a></span>
+          </div>
+          <div class="nav2">
+            <span class="glyphicon glyphicon-bell notification"></span>
+            <a href="#" class="createNew">
+              <span class="glyphicon glyphicon-plus"></span>
+              <span class="glyphicon glyphicon-triangle-bottom"></span>
+            </a>
+            <div class="smallPro">
+              <img src="#" alt="PP">
+              <span class="smallProfilePic"></span>
+              <span class="glyphicon glyphicon-triangle-bottom"></span>
+            </div>
 
-      </div>
-    </header>
-
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 sidebar">
-        </div>
+          </div>
+        </header>
 
 
-
-        <div class="col-md-9 main-body">
+        <div class="container">
           <div class="row">
-              <ul class="nav nav-tabs">
-                <li role="presentation" class="contributions active"><a href="#">Contributions</a></li>
-                <li role="presentation" class="repositories"><a href="#">Repositories</a></li>
-                <li role="presentation" class="activity"><a href="#">Public Activity</a></li>
-                <li role="presentation" class="presentation edit"><button class="btn btn-sm edit-button"><span class='glyphicon glyphicon-pencil'></span>Edit Profile</button></li>
-             </ul>
+            <div class="col-md-3 sidebar"></div>
 
+
+            <div class="col-md-9 main-body">
+              <div class="row">
+                <div class="col-md-12 repo-header">
+                    <ul class="nav nav-tabs">
+                      <li role="presentation" class="contributions"><a href="#"><img src="../dist/images/diff-added.png" alt="">Contributions</a></li>
+                      <li role="presentation" class="repositories active"><a href="#"><img src="../dist/images/repo.png" alt="">Repositories</a></li>
+                      <li role="presentation" class="activity"><a href="#"><img src="../dist/images/rss.png" alt="">Public Activity</a></li>
+                      <li role="presentation" class="presentation edit"><button class="btn btn-sm edit-button"><span class='glyphicon glyphicon-pencil'></span>Edit Profile</button></li>
+                   </ul>
+                 </div>
+              </div>
+
+              <div class="repository-section">
+                <div class="rep-tab"></div>
+                <div class="repo-space"></div>
+              </div>
+
+            </div>
+          </div> <!--end of row-->
+
+        </div> <!--end of container-->
+
+        <div class="footer">
+          <ul class="footNav1">
+            <li>&#169; 2016 Github Inc.</li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <div class="footer-img"><img src="../dist/images/github.png" alt="github icon"></div>
+          <ul class="footNav2">
+            <li><a href="#">Status</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">Training</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </div><!--end of footer-->
+
+
+<!------------------------------SCRIPT TAGS------------------------------------>
+
+    <!--SIDEBAR-->
+        <script id="sidebar_info" type="text/x-handlebars-template">
+            <div class="row">
+              <div class="col-md-12 profile_pic">
+                <img src="{{avatar_url}}" alt="profile-pic">
+              </div>
+            </div>
+
+            <div class="name">
+              <h1>{{name}}</h1>
+              <h2>{{login}}</h2>
+            </div>
+
+            <div class="location"><span class="glyphicon glyphicon-map-marker map"></span>{{location}}</div>
+            <div class="email"><span class="glyphicon glyphicon-envelope envelope"></span>{{email}}</div>
+            <div class="website"><span class="glyphicon glyphicon-link"></span><a href="https://www.linkedin.com/in/joshua-abu-b8738358?trk=hp-identity-name">{{blog}}</a></div>
+            <div class="time"><span class="glyphicon glyphicon-time"></span>Joined on {{date}}</div>
+            <div class="foll-Star">
+                <div class="followers">
+                  <div class="followerNum">{{followersNum}}</div>
+                  <span><a href="https://github.com/Absolutestunna/followers">Followers</a></span>
+                </div>
+
+                <div class="starred">
+                  <div class="starredNum">0</div>
+                  <span><a href="https://github.com/stars">Starred</a></span>
+                </div>
+
+                <div class="following">
+                  <div class="followingNum">{{followingNum}}</div>
+                  <span><a href="https://github.com/Absolutestunna/following">Following</a></span>
+                </div>
+            </div>
+              <div class="organizations">Organizations</div>
+              <div class="orgImgs"><a href="https://github.com/tiy-greenville-frontend-2016-feb"></a></div>
+        </script>
+
+
+    <!--MAIN BODY-->
+
+        <script id="repo-info" type="text/x-handlebars-template">
+          <div class="form-group repo-searchIB">
+            <input type="text" placeholder="Find a repository"class="form-control" id="repo-search">
+            <button type="button" class="btn btn-default search-btn">Search</button>
           </div>
-          <div class="repo-space"></div>
-        </div>
-      </div>
+          <ul class="repoFunctions">
+            <li>All</li>
+            <li><a href="#">Public</a></li>
+            <li><a href="#">Private</a></li>
+            <li><a href="#">Sources</a></li>
+            <li><a href="#">Forks</a></li>
+            <li><a href="#">Mirrors</a></li>
+          </ul>
+          <button class="btn btn-default new-btn"><img src="../dist/images/repo.png" alt=""><span>New</span></button>
+        </script>
 
-    </div> <!--end of container-->
+        <script id="repo-rep" type="text/x-handlebars-template">
+          <div class="repoWrapper">
+            <div class="left">
+              <h3 class="repName">{{name}}</h3>
+              <h6 class="repTime">updated {{updated_at}}</h6>
+            </div>
+            <div class="right">
+              <h6 class="language">{{language}}</h6>
+              <span class="glyphicon glyphicon-star"></span>
+              <h6 class="repStars">{{stargazers_count}}</h6>
+              <span><img class="git-img"src="../dist/images/branch.png" alt=""></span>
+              <h6 class="forkCount">{{forks_count}}</h6>
 
-
-
-    <script id="sidebar_info" type="text/x-handlebars-template">
-        <div class="row">
-          <div class="col-md-12 profile_pic">
-            <img src="{{avatar_url}}" alt="profile-pic">
+            </div>
           </div>
-        </div>
-
-        <div class="name">
-          <h1>{{name}}</h1>
-          <h2>{{login}}</h2>
-        </div>
-
-        <div class="location"><span class="glyphicon glyphicon-map-marker map"></span>{{location}}</div>
-        <div class="email"><span class="glyphicon glyphicon-envelope envelope"></span>{{email}}</div>
-
-        <div class="website"><span class="glyphicon glyphicon-link"></span><a href="https://www.linkedin.com/in/joshua-abu-b8738358?trk=hp-identity-name">{{blog}}</a></div>
-
-        <div class="time"><span class="glyphicon glyphicon-time"></span>Joined on {{date}}</div>
+        </script>
 
 
-          <div class="followers">
-            <div class="followerNum">{{followersNum}}</div>
-            <span><a href={{followers}}>Followers</a></span>
-          </div>
 
-          <div class="following">
-            <div class="followingNum">{{followingNum}}</div>
-            <span><a href={{following}}>Following</a></span>
-          </div>
+<!------------------------------JAVASCRIPT TAGS-------------------------------->
 
-          <!-- <div>Organizations</div> -->
-          <div class="orgImgs"></div>
-          <!-- <div class="organizations"><a href="{{organizations}}">JS Link</a></div> -->
-    </script>
-
-    <script id="body-info" type="text/x-handlebars-template">
-      <div class="repoWrapper">
-        <div class="left">
-          <h3 class="repName">{{name}}</h3>
-          <h6 class="repTime">{{updated_at}}</h6>
-        </div>
-        <div class="right">
-          <h6 class="language">{{language}}</h6>
-          <span class="glyphicon glyphicon-star"></span>
-          <h6 class="repStars">{{stargazers_count}}</h6>
-          <span><img class="git-img"src="../dist/images/branch.png" alt=""></span>
-          <h6 class="forkCount">{{forks_count}}</h6>
-
-        </div>
-      </div>
-    </script>
-    <script src="js/bundle.js"></script>
+        <script src="js/bundle.js"></script>
   </body>
 </html>
