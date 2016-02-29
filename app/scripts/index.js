@@ -7,20 +7,19 @@ var context2;
 var context3;
 var orgs;
 
-
+// var githubtoken = require("./githubtoken.js").token;
 var githubtoken;
 var username = "Absolutestunna";
 
 
 ///////////////////////Attempt to capture input value///////////////////////////
-// $( ".input" ).on( "keydown", function( event ) {
-//   if (event.which == 13){
-//     username = $(".input").val();
-//     console.log(username)
-//     startProgram();
-//   }
-// });
-////////////////////////////////////////////////////////////////////////////////
+$( ".input" ).on( "keydown", function( event ) {
+  if (event.which == 13){
+    username = $(".input").val();
+    startProgram();
+  }
+});
+//////////////////////////////////////////////////////////////////////////////
 
 
 startProgram();
