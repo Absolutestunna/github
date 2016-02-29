@@ -13,8 +13,8 @@ var username = "Absolutestunna";
 
 
 ///////////////////////Attempt to capture input value///////////////////////////
-$( ".input" ).on( "keydown", function( event ) {
-  if (event.which == 13){
+$( ".input" ).on( "keydown", function(event) {
+  if (event.keyCode == 13){
     username = $(".input").val();
     startProgram();
   }
@@ -24,9 +24,20 @@ $( ".input" ).on( "keydown", function( event ) {
 
 startProgram();
 function startProgram(){
-    var url = "https://api.github.com/users/" + username;
-    var urlOrgs = "https://api.github.com/users/" + username + "/orgs";
-    var url2 = "https://api.github.com/users/" + username + "/repos";
+    function url(){
+      console.log(username)
+      return "https://api.github.com/users/" + username;
+    }
+    function urlTwo(){
+      return "https://api.github.com/users/" + username + "/repos";
+    }
+    function urlOrgsFunc(){
+      return "https://api.github.com/users/" + username + "/orgs";
+    }
+
+    // var url = "https://api.github.com/users/" + username;
+    // var urlOrgs = "https://api.github.com/users/" + username + "/orgs";
+    // var url2 = "https://api.github.com/users/" + username + "/repos";
 
 
   if(typeof(githubtoken) !== "undefined"){
@@ -39,7 +50,7 @@ function startProgram(){
 
   var source = $("#sidebar_info").html();
   var template = handlebars.compile(source);
-  $.ajax(url).then(function(data){
+  $.ajax(url()).then(function(data){
     var context = {
         name: data.name,
         avatar_url: data.avatar_url,
@@ -57,8 +68,8 @@ function startProgram(){
         date: moment(data.created_at).format("MMMM Do, YYYY"),
         organizations: data.organizations,
       }
-      $(".smallPro .smallProfilePic").append('<img src="' + context.avatar_url + '">');
-      $(".sidebar").append(template(context));
+      $(".smallPro .smallProfilePic").html('<img src="' + context.avatar_url + '">');
+      $(".sidebar").html(template(context));
 
   }).then(orgsFunc);
 
@@ -83,8 +94,10 @@ function startProgram(){
     $(".repo-space h1").remove();
     var source3 = $("#repo-rep").html();
     var templateNum = handlebars.compile(source3);
-  $.ajax(url2).then(function(data){
+  $.ajax(urlTwo()).then(function(data){
     var sorted = _.sortBy(data, "updated_at");
+    $(".repo-space").empty();
+
     _.each(sorted.reverse(), function(element){
        context3 = {
         name: element.name,
@@ -100,7 +113,7 @@ function startProgram(){
   }
 
   function orgsFunc(){
-    $.ajax(urlOrgs).then(function(data){
+    $.ajax(urlOrgsFunc()).then(function(data){
       orgs = data[0].avatar_url;
       $(".orgImgs a").append('<img src="' + orgs + '">');
     })
