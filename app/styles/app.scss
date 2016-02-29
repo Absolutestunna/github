@@ -39,6 +39,9 @@ header {
       border-radius: 2%;
       display: inline-block;
       margin-right: 15px;
+      font-weight: 400;
+      font-size: 12px;
+      border-radius: 5%;
     }
     span {
       margin-right: 15px;
@@ -55,16 +58,23 @@ header {
     display: inline-block;
     float: right;
     margin-right: 153.5px;
+    color: black;
+    margin-top: 5px;
     .smallPro {
       display: inline-block;
       margin-left: 12px;
     }
     img {
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 20px;
+      border-radius: 10%;
     }
     .createNew {
       margin-left: 12px;
+      color: black;
+    }
+    .notification {
+      color: black;
     }
     .notification:hover {
       color: #4078c0;
