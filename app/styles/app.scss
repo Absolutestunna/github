@@ -25,6 +25,8 @@ header {
   .nav1 {
     display: inline-block;
     margin-left: 153.5px;
+    color: #333;
+    font-weight: bold;
     img {
       display: inline-block;
       width: 25px;
@@ -75,7 +77,6 @@ header {
 
 .container {
   max-width: 973px;
-  height: 800px;
   margin-top: 20px;
   border-bottom: 1px solid #eee;
   margin-bottom: 40px;
@@ -159,7 +160,7 @@ header {
   a {
     margin-right: 10px;
     font-size: 14px;
-    color: black;
+    color: #4078c0;
   }
 }
 .time {
@@ -190,6 +191,10 @@ header {
       color: black;
       font-size: 11px;
     }
+    a:hover {
+      color: #4078c0;
+      text-decoration: none;
+    }
     div {
       color: #4078c0;
       font-weight: bolder;
@@ -197,9 +202,11 @@ header {
       text-align: center;
     }
   }
+
   .followers, .starred {
     margin-right: 39px;
   }
+
 }
 .organizations {
   margin-top: 18px;
@@ -216,8 +223,6 @@ header {
 
   }
 }
-
-
 
 //////////////////////////////MAIN BODY////////////////////////////////////
 
@@ -379,9 +384,8 @@ header {
 .footer-img {
   position: absolute;
   left: 50%;
-  img {
-  height: 24px;
-  width: 24px;
+  span {
+  font-size: 24px;
   color: #ccc;
 
   }
