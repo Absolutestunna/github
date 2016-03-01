@@ -34,7 +34,9 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-md-3 sidebar"></div>
+            <div class="col-md-3 sidebar">
+              <!-- <div class="orgs-imgs"></div> -->
+            </div>
 
 
             <div class="col-md-9 main-body">
@@ -143,8 +145,7 @@ Public Activity</a></li>
 
                 </div>
             </div>
-              <div class="organizations">Organizations</div>
-              <div class="orgImgs"><a href="https://github.com/tiy-greenville-frontend-2016-feb"></a></div>
+
         </script>
 
 
@@ -165,8 +166,13 @@ Public Activity</a></li>
 
             </div>
           </div>
-
         </script>
+
+        <script id="side-org" type="text/x-handlebars-template">
+          <div class="organizations">Organizations</div>
+          <div class="orgImgs"><a href="#"><img src="{{orgs}}" alt=""></a></div>
+        </script>
+
 <!------------------------------JAVASCRIPT TAGS-------------------------------->
 
         <script src="js/bundle.js"></script>

@@ -14,7 +14,7 @@ var githubtoken;
 var username = "Absolutestunna";
 
 
-///////////////////////Attempt to capture input value///////////////////////////
+///////////////////////Capture input value///////////////////////////
 $( ".input" ).on( "keydown", function(event) {
   if (event.keyCode == 13){
     username = $(".input").val();
@@ -37,11 +37,6 @@ function startProgram(){
       return "https://api.github.com/users/" + username + "/orgs";
     }
 
-    // var url = "https://api.github.com/users/" + username;
-    // var urlOrgs = "https://api.github.com/users/" + username + "/orgs";
-    // var url2 = "https://api.github.com/users/" + username + "/repos";
-
-
   if(typeof(githubtoken) !== "undefined"){
     $.ajaxSetup({
       headers: {
@@ -53,7 +48,7 @@ function startProgram(){
   var source = $("#sidebar_info").html();
   var template = handlebars.compile(source);
   $.ajax(url()).then(function(data){
-    var context = {
+     context = {
         name: data.name,
         avatar_url: data.avatar_url,
         blog: data.blog,
@@ -73,7 +68,8 @@ function startProgram(){
       $(".smallPro .smallProfilePic").html('<img src="' + context.avatar_url + '">');
       $(".sidebar").html(template(context));
 
-  }).then(orgsFunc);
+  });
+  // .then(orgsFunc);
 
   $(".repositories").on("click", function(){
     $(".contributions").removeClass("active");
@@ -94,30 +90,34 @@ function startProgram(){
 
   function repofunc(){
     $(".repo-space h1").remove();
-    var source3 = $("#repo-rep").html();
-    var templateNum = handlebars.compile(source3);
+    var source2 = $("#repo-rep").html();
+    var template2 = handlebars.compile(source2);
   $.ajax(urlTwo()).then(function(data){
     var sorted = _.sortBy(data, "updated_at");
     $(".repo-space").empty();
-
-    _.each(sorted.reverse(), function(element){
-       context3 = {
-        name: element.name,
-        updated_at: moment(element.updated_at).fromNow(),
-        stargazers_count: element.stargazers_count,
-        forks_count: element.forks_count,
-        language: element.language,
-      };
-      $(".repo-space").append(templateNum(context3));
-    });
-
+      _.each(sorted.reverse(), function(element){
+         context2 = {
+          name: element.name,
+          updated_at: moment(element.updated_at).fromNow(),
+          stargazers_count: element.stargazers_count,
+          forks_count: element.forks_count,
+          language: element.language,
+        };
+        $(".repo-space").append(template2(context2));
+      });
     });
   }
-
+ orgsFunc()
   function orgsFunc(){
+    var source3 = $("#side-org").html();
+    var template3 = handlebars.compile(source3);
     $.ajax(urlOrgsFunc()).then(function(data){
-      orgs = data[0].avatar_url;
-      $(".orgImgs a").append('<img src="' + orgs + '">');
+      _.each(data, function(element){
+        context3 = {
+          orgs: element.avatar_url,
+        }
+      });
+    $(".sidebar").append(template3(context3));
     })
   }
   function contFunc(){
