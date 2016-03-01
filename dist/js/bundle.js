@@ -14,13 +14,17 @@ var githubtoken;
 var username = "Absolutestunna";
 
 
-///////////////////////Capture input value///////////////////////////
-$( ".input" ).on( "keydown", function(event) {
+/////////////////////////////////Capture input value///////////////////////////
+$( ".input" ).on("keydown", function(event) {
   if (event.keyCode == 13){
     username = $(".input").val();
     startProgram();
   }
 });
+//////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////Repo Search///////////////////////////////////
+
 //////////////////////////////////////////////////////////////////////////////
 
 
@@ -68,8 +72,7 @@ function startProgram(){
       $(".smallPro .smallProfilePic").html('<img src="' + context.avatar_url + '">');
       $(".sidebar").html(template(context));
 
-  });
-  // .then(orgsFunc);
+  }).then(orgsFunc);
 
   $(".repositories").on("click", function(){
     $(".contributions").removeClass("active");
@@ -93,8 +96,8 @@ function startProgram(){
     var source2 = $("#repo-rep").html();
     var template2 = handlebars.compile(source2);
   $.ajax(urlTwo()).then(function(data){
-    var sorted = _.sortBy(data, "updated_at");
     $(".repo-space").empty();
+    var sorted = _.sortBy(data, "updated_at");
       _.each(sorted.reverse(), function(element){
          context2 = {
           name: element.name,
@@ -105,9 +108,10 @@ function startProgram(){
         };
         $(".repo-space").append(template2(context2));
       });
+
     });
   }
- orgsFunc()
+  
   function orgsFunc(){
     var source3 = $("#side-org").html();
     var template3 = handlebars.compile(source3);
