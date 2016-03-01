@@ -29,7 +29,6 @@ $( ".input" ).on("keydown", function(event) {
 startProgram();
 function startProgram(){
     function url(){
-      console.log(username)
       return "https://api.github.com/users/" + username;
     }
     function urlTwo(){
@@ -109,7 +108,7 @@ function startProgram(){
 
     });
   }
-  
+
   function orgsFunc(){
     var source3 = $("#side-org").html();
     var template3 = handlebars.compile(source3);
